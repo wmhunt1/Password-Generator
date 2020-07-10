@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -10,10 +11,18 @@
 <body>
     <H1>P@ssw0rd_G3n3r@t0r!</H1>
     <H2>Instructions</H2>
-    <p>Input the desired length for new your password. Length must be between 8 and 100 characters.</p>
+    <p>Input the desired length for new your password. Length must at least 8 but no more than 128 characters.</p>
     <form id ="generator" >
         <!-- box to accept input -->
-        <input id="input">
+        <input id="input"><br>
+        <input type="checkbox" id="lowercase" name="lowercase" value="lowercase">
+        <label for="lowercase"> I want lowercase letters</label><br>
+        <input type="checkbox" id="uppercase" name="uppercase" value="uppercase">
+        <label for="lowercase"> I want uppercase letters</label><br>
+        <input type="checkbox" id="numbers" name="numbers" value="numbers">
+        <label for="lowercase"> I want numbers</label><br>
+        <input type="checkbox" id="special" name="special" value="special">
+        <label for="lowercase"> I want special characters</label><br>
         <!-- button that triggers function -->
         <input type="button" onclick="generate_password();" value="Generate Password">
     </form>

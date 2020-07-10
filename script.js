@@ -13,7 +13,7 @@ function generate_password()
     else
     {
         //checks if in range
-        if (numofchars < 8 || numofchars > 100)
+        if (numofchars < 8 || numofchars > 128)
         {
             document.getElementById("NP").innerHTML = "Warning: Input is outside valid range."
         }
