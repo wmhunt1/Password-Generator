@@ -62,7 +62,7 @@ function generate_password()
                     //does nothing
                 }
                 //checks to see if any options are selected.
-                if (charArray.Length == undefined)
+                if (charArray === undefined || charArray.length == 0)
                 {
                     password = "You didn't select any criteria."
                 }
