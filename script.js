@@ -1,8 +1,8 @@
 
 function generate_password()
 {
-    // prompts user for number of characters
-    var input = prompt("Choose the number of characters")
+    // prompts user for number of characters, took a while since I didn't have .value
+    var input = document.getElementById("input").value
     console.log(input)
     // checks if it's a number
     var numofchars = parseInt(input)
