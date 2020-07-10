@@ -61,10 +61,18 @@ function generate_password()
                 {
                     //does nothing
                 }
-                //chooses random alphanumeric character, options are lowercase or uppercase, letter, numbers, or special characters
-                var char =  Math.floor((Math.random() * charArray.length));
-                //adds to password
-                password += charArray[char];
+                //checks to see if any options are selected.
+                if (charArray.Length == undefined)
+                {
+                    password = "You didn't select any criteria."
+                }
+                else
+                {
+                    //generates random value from array
+                    var char =  Math.floor((Math.random() * charArray.length));
+                    //adds to password
+                    password += charArray[char];
+                }
             }
             //posts to sheet. first is so new password message doesn't show up until generated.
             document.getElementById("NP_label").innerHTML = "Your new password is...";
