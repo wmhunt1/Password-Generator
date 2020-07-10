@@ -22,17 +22,21 @@ function generate_password()
         else
         {
             //generates password based on desired length
+            var password = "";
             for (var i = 0; i < numofchars; i++)
             {
-                //chooses random alphanumeric character, options are lowercase or uppercase, letter, numbers, or special characters
+                //options for password
                 var charArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "a", "B", "b", "C", "c", "D", "d", "E", "e", "F", "f", "G", "g",
                 "H", "h", "I", "i", "J", "j", "K", "k", "L", "l", "M", "m", "N", "n", "O", "o", "P", "p", "Q", "q", "R", "r", "S", "s", "T", "t", "U", "u", 
                 "V", "v", "W", "w", "X", "x", "Y", "y", "Z", "z", "!", "@", "#", "$", "%", "^", "&", "*", "_" ]
-                var char =  Math.floor((Math.random() * charArray.length))
+                //chooses random alphanumeric character, options are lowercase or uppercase, letter, numbers, or special characters
+                var char =  Math.floor((Math.random() * charArray.length));
                 console.log(charArray[char])
-                
+                //adds to password
+                password += charArray[char];
             }
-            //alert ("password generated")
+            console.log(password)
+            alert("Your new password is " + password)
         }
     }
 }
