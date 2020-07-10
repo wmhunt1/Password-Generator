@@ -10,12 +10,14 @@
 <body>
     <H1>P@ssw0rd_G3n3r@t0r!</H1>
     <H2>Instructions</H2>
-    <p>Input the number of characters you would like your new password to be.</p>
+    <p>Input the desired length for your password. Length must be between 8 and 100 characters.</p>
     <form id ="generator" >
         <!-- box to accept input -->
         <input id="input">
         <!-- button that triggers function -->
         <input type="button" onclick="generate_password();" value="Generate Password">
-      </form>
+    </form>
+    <h3 id = "NP_label"></h3>
+    <p id = "NP"></p>
 </body>
 </html>

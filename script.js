@@ -3,21 +3,19 @@ function generate_password()
 {
     // prompts user for number of characters, took a while since I didn't have .value
     var input = document.getElementById("input").value
-    console.log(input)
     // checks if it's a number
     var numofchars = parseInt(input)
-    console.log(numofchars)
     // lets you know if not a number
     if(isNaN(input))
     {
-        alert ("Not a Number")
+        document.getElementById("NP").innerHTML = "Warning: Input is not a number."
     }
     else
     {
         //checks if in range
-        if (numofchars < 2 || numofchars > 100)
+        if (numofchars < 8 || numofchars > 100)
         {
-            alert ("Invalid input")
+            document.getElementById("NP").innerHTML = "Warning: Input is outside valid range."
         }
         else
         {
@@ -31,12 +29,12 @@ function generate_password()
                 "V", "v", "W", "w", "X", "x", "Y", "y", "Z", "z", "!", "@", "#", "$", "%", "^", "&", "*", "_" ]
                 //chooses random alphanumeric character, options are lowercase or uppercase, letter, numbers, or special characters
                 var char =  Math.floor((Math.random() * charArray.length));
-                console.log(charArray[char])
                 //adds to password
                 password += charArray[char];
             }
-            console.log(password)
-            alert("Your new password is " + password)
+            //posts to sheet. first is so new password message doesn't show up until generated.
+            document.getElementById("NP_label").innerHTML = "Your new password is...";
+            document.getElementById("NP").innerHTML = password;
         }
     }
 }
